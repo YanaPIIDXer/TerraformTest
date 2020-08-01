@@ -20,9 +20,10 @@ module "route_table" {
 }
 
 module "security_group" {
-  source     = "./SecurityGroup"
-  vpc_id     = module.vpc.vpc_id
-  enable_ssh = true
+  source      = "./SecurityGroup"
+  vpc_id      = module.vpc.vpc_id
+  enable_ssh  = true
+  enable_http = true
 }
 
 variable "key_name" {}
@@ -32,9 +33,9 @@ module "ec2" {
   subnet          = module.vpc.public_subnets[0]
   security_groups = [module.security_group.id]
   user_data       = <<USER_DATA
-sudo yum install -y httpd
-sudo systemctl enable httpd.service
-sudo systemctl start httpd.service    
+yum install -y httpd
+systemctl enable httpd.service
+systemctl start httpd.service
   USER_DATA
   key_name        = var.key_name
 }
