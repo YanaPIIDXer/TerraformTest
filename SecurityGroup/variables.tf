@@ -23,12 +23,14 @@ variable "ingress_rules" {
 }
 
 variable "egress_rules" {
-  default = [{
-    from        = 0
-    to          = 0
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }]
+  default = [
+    {
+      from        = 0
+      to          = 0
+      protocol    = -1
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  ]
   description = "アウトバウンドルールの配列"
 }
 
