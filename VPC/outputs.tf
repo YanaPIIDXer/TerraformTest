@@ -10,7 +10,7 @@ output "public_subnets" {
 
 output "private_subnets" {
   value       = aws_subnet.private_subnets
-  description = "パブリックサブネットの配列"
+  description = "プライベートサブネットの配列"
 }
 
 output "internet_gateway_id" {
