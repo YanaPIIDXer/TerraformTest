@@ -22,3 +22,13 @@ variable "instance_type" {
   default     = "t2.micro"
   description = "インスタンスタイプ"
 }
+
+variable "associate_public_ip_address" {
+  default     = true
+  description = "パブリックＩＰアドレスを割り振るか？"
+}
+
+variable "key_name" {
+  default     = ""
+  description = "キー名"
+}

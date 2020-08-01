@@ -25,8 +25,11 @@ module "security_group" {
   enable_ssh = true
 }
 
+variable "key_name" {}
+
 module "ec2" {
   source          = "./EC2"
   subnet          = module.vpc.public_subnets[0]
   security_groups = [module.security_group.id]
+  key_name        = var.key_name
 }
