@@ -24,3 +24,9 @@ module "security_group" {
   vpc_id     = module.vpc.vpc_id
   enable_ssh = true
 }
+
+module "ec2" {
+  source          = "./EC2"
+  subnet_id       = module.vpc.public_subnets[0].id
+  security_groups = [module.security_group.id]
+}
