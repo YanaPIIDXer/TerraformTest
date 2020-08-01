@@ -3,11 +3,6 @@ output "vpc_id" {
   description = "生成されたVPCのID"
 }
 
-output "internet_gateway_id" {
-  value       = aws_internet_gateway.internet_gateway.id
-  description = "インターネットゲートウェイのＩＤ"
-}
-
 output "public_subnets" {
   value       = aws_subnet.public_subnets
   description = "パブリックサブネットの配列"

@@ -6,4 +6,3 @@ provider "aws" {
 module "vpc" {
   source = "./VPC"
 }
-
