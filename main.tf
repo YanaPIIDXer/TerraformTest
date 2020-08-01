@@ -18,3 +18,9 @@ module "route_table" {
     }
   ]
 }
+
+module "security_group" {
+  source     = "./SecurityGroup"
+  vpc_id     = module.vpc.vpc_id
+  enable_ssh = true
+}
