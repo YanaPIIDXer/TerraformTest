@@ -39,9 +39,9 @@ resource "aws_db_instance" "this" {
   engine                 = var.engine.prog
   engine_version         = var.engine.version
   instance_class         = var.instance_class
-  name                   = var.db_data.db_name
-  username               = var.db_data.user_name
-  password               = var.db_data.password
+  name                   = var.db_name
+  username               = var.root_data.name
+  password               = var.root_data.password
   vpc_security_group_ids = var.security_groups
   db_subnet_group_name   = aws_db_subnet_group.subnet_group.name
   skip_final_snapshot    = true

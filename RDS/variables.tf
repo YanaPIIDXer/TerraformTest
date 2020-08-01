@@ -4,59 +4,63 @@ variable "name" {
 }
 
 variable "identifier" {
-    default = "aws-project"
-    description = "識別名"
+  default     = "aws-project"
+  description = "識別名"
 }
 
 variable "subnets" {
-    description = "サブネットの配列"
+  description = "サブネットの配列"
 }
 
 variable "storage" {
-    default = {
-        type = "gp2"
-        allocated_size = 20
-    }
-    description = "ストレージの設定"
+  default = {
+    type           = "gp2"
+    allocated_size = 20
+  }
+  description = "ストレージの設定"
 }
 
 variable "instance_class" {
-    default = "db.t3.micro"
-    description = "インスタンスクラス"
+  default     = "db.t3.micro"
+  description = "インスタンスクラス"
 }
 
 variable "engine" {
-    default = {
-        prog = "mysql"
-        version = "8.0"
-        // ↓versionから取り出せないかな・・・？
-        major_version = "8.0"
-    }
-    description = "DBエンジンの設定"
+  default = {
+    prog    = "mysql"
+    version = "8.0"
+    // ↓versionから取り出せないかな・・・？
+    major_version = "8.0"
+  }
+  description = "DBエンジンの設定"
 }
 
-variable "db_data" {
-    default = {
-        db_name = "test"
-        user_name = "root"
-        password = "password"
-    }
-    description = "データベースの情報"
+variable "db_name" {
+  default     = "my_database"
+  description = "データベース名"
+}
+
+variable "root_data" {
+  default = {
+    name     = "root"
+    password = "password"
+  }
+  description = "ルート権限の情報"
 }
 
 variable "security_groups" {
-    description = "セキュリティグループの配列"
+  description = "セキュリティグループの配列"
 }
 
 variable "time_zone" {
-    default = "Asia/Tokyo"
-    description = "タイムゾーン"
+  default     = "Asia/Tokyo"
+  description = "タイムゾーン"
 }
 
 variable "charset" {
-    default = {
-        server = "utf8"
-        client = "utf8"
-    }
-    description = "サーバ・クライアントそれぞれで使用する文字コード"
+  default = {
+    server = "utf8"
+    client = "utf8"
+  }
+  description = "サーバ・クライアントそれぞれで使用する文字コード"
 }

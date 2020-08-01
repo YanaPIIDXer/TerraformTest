@@ -78,5 +78,6 @@ module "rds" {
         module.vpc.private_subnets[0].id,
         module.vpc.private_subnets[1].id
     ]
+    db_name = "wordpress"
     security_groups = [module.rds_security_group.id]
 }
