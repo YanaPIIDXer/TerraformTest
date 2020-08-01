@@ -3,14 +3,9 @@ variable "name" {
   description = "名前"
 }
 
-variable "availability_zone" {
+variable "subnet" {
   default     = ""
-  description = "アベイラビリティゾーン"
-}
-
-variable "subnet_id" {
-  default     = ""
-  description = "サブネットのID"
+  description = "サブネット"
 }
 
 variable "security_groups" {
