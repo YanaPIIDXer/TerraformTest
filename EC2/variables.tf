@@ -28,6 +28,11 @@ variable "associate_public_ip_address" {
   description = "パブリックＩＰアドレスを割り振るか？"
 }
 
+variable "user_data" {
+  default     = ""
+  description = "ユーザデータ"
+}
+
 variable "key_name" {
   default     = ""
   description = "キー名"
