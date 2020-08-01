@@ -1,6 +1,6 @@
 variable "name" {
-    default = "aws_project"
-    description = "リソース名"
+  default     = "aws_project"
+  description = "リソース名"
 }
 
 variable "vpc_id" {
@@ -8,5 +8,6 @@ variable "vpc_id" {
 }
 
 variable "cidr_block" {
-    description = "ＩＰアドレスの範囲"
+  default     = "10.0.1.0/24"
+  description = "ＩＰアドレスの範囲"
 }
