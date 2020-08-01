@@ -7,10 +7,10 @@ resource "aws_route_table" "default" {
 }
 
 resource "aws_route" "gateway_route" {
-  count                  = length(var.gateways)
+  count                  = length(var.gateway_routes)
   route_table_id         = aws_route_table.default.id
-  gateway_id             = var.gateways[count.index].id
-  destination_cidr_block = var.gateways[count.index].cidr_block
+  gateway_id             = var.gateway_routes[count.index].id
+  destination_cidr_block = var.gateway_routes[count.index].cidr_block
 }
 
 resource "aws_route_table_association" "subnet_association" {

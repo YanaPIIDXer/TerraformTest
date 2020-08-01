@@ -12,9 +12,9 @@ variable "subnets" {
   description = "サブネットの配列"
 }
 
-variable "gateways" {
+variable "gateway_routes" {
   default     = []
-  description = "ゲートウェイとcidr_blockの配列"
+  description = "ゲートウェイとcidr_blockのセットの配列"
 }
 
 /*
