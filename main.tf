@@ -73,7 +73,8 @@ module "rds_security_group" {
 
 module "rds" {
     source = "./RDS"
-    // HACK:サブネットのリソースそのものではなくＩＤの指定に統一する。
+    // HACK:ここではID単位の指定だが、他の所ではサブネットのリソースそのものを指定している。
+    //      どちらかに統一したい。
     subnets = [
         module.vpc.private_subnets[0].id,
         module.vpc.private_subnets[1].id
