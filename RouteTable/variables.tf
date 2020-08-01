@@ -12,7 +12,14 @@ variable "subnets" {
   description = "サブネットの配列"
 }
 
+// HACK:「本当はinternet_gateway_idがnullか？」で判断したいのだが、
+//      それをやると値を放り込んだ時に「この値はapplyするまで何か分からんよ」といわれてplanが失敗する。
+//      良くない書き方だが今のところ止む無しの措置。
+variable "use_internet_gateway" {
+  default     = false
+  description = "インターネットゲートウェイを使用するか？"
+}
+
 variable "internet_gateway_id" {
-  default     = null
-  description = "インターネットゲートウェイのＩＤ。指定したら自動的に0.0.0.0/0のルーティングが生成される。"
+  description = "use_internet_gatewayがtrueの時に使用するインターネットゲートウェイのＩＤ。"
 }
