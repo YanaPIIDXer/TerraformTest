@@ -31,5 +31,10 @@ module "ec2" {
   source          = "./EC2"
   subnet          = module.vpc.public_subnets[0]
   security_groups = [module.security_group.id]
+  user_data       = <<USER_DATA
+sudo yum install -y httpd
+sudo systemctl enable httpd
+sudo systemctl start httpd      
+  USER_DATA
   key_name        = var.key_name
 }
