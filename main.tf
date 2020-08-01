@@ -6,3 +6,8 @@ provider "aws" {
 module "vpc" {
   source = "./VPC"
 }
+
+module "route_table" {
+  source = "./RouteTable"
+  vpc_id = module.vpc.vpc_id
+}
