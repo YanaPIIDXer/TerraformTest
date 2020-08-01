@@ -1,4 +1,4 @@
-output "route_tables" {
-  value       = aws_route_table.default
-  description = "ルートテーブルの配列"
+output "id" {
+  value       = aws_route_table.default.id
+  description = "ルートテーブルのＩＤ"
 }
