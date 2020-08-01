@@ -7,7 +7,3 @@ module "vpc" {
   source = "./VPC"
 }
 
-module "public_subnet" {
-  source = "./Subnet"
-  vpc_id = module.vpc.vpc_id
-}
