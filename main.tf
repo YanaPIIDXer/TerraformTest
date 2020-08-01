@@ -26,7 +26,8 @@ module "security_group" {
 }
 
 module "ec2" {
-  source          = "./EC2"
-  subnet_id       = module.vpc.public_subnets[0].id
-  security_groups = [module.security_group.id]
+  source            = "./EC2"
+  availability_zone = "ap-northeast-1a"
+  subnet_id         = module.vpc.public_subnets[0].id
+  security_groups   = [module.security_group.id]
 }

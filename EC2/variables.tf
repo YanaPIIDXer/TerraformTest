@@ -3,6 +3,11 @@ variable "name" {
   description = "名前"
 }
 
+variable "availability_zone" {
+  default     = ""
+  description = "アベイラビリティゾーン"
+}
+
 variable "subnet_id" {
   default     = ""
   description = "サブネットのID"
