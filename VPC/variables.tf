@@ -9,7 +9,12 @@ variable "cidr_block" {
 }
 
 variable "public_subnets" {
-  default     = ["10.0.1.0/24"]
+  default = [
+    {
+      cidr_block        = "10.0.1.0/24"
+      availability_zone = ""
+    }
+  ]
   description = "パブリックサブネットの配列。１つでも要素があればインターネットゲートウェイも生成する。"
 }
 
