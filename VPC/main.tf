@@ -11,7 +11,7 @@ resource "aws_subnet" "public_subnets" {
   vpc_id     = aws_vpc.default.id
   cidr_block = element(var.public_subnets, count.index)
   tags = {
-    Name = join("", list("${var.name}", "_public_", "${count.index}"))
+    Name = join("", list("${var.name}", "_public"), (length(var.public_subnets) > 1) ? list("_", "${count.index + 1}") : list(""))
   }
 }
 
@@ -20,7 +20,7 @@ resource "aws_subnet" "private_subnets" {
   vpc_id     = aws_vpc.default.id
   cidr_block = element(var.private_subnets, count.index)
   tags = {
-    Name = join("", list("${var.name}", "_private_", "${count.index}"))
+    Name = join("", list("${var.name}", "_private"), (length(var.private_subnets) > 1) ? list("_", "${count.index + 1}") : list(""))
   }
 }
 
