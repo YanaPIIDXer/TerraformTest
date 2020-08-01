@@ -5,12 +5,12 @@ variable "name" {
 
 variable "cidr_block" {
   default     = "10.0.0.0/16"
-  description = "ＩＰアドレス"
+  description = "ＩＰアドレスの範囲"
 }
 
 variable "public_subnets" {
   default     = ["10.0.1.0/24"]
-  description = "パブリックサブネットの配列"
+  description = "パブリックサブネットの配列。１つでも要素があればインターネットゲートウェイも生成する。"
 }
 
 variable "private_subnets" {

@@ -15,5 +15,5 @@ output "private_subnets" {
 
 output "internet_gateway_id" {
   value       = length(aws_internet_gateway.internet_gateway) > 0 ? aws_internet_gateway.internet_gateway[0].id : null
-  description = "インターネットゲートウェイのＩＤ"
+  description = "インターネットゲートウェイのＩＤ。パブリックサブネットが存在しない場合はnullを返す。"
 }
