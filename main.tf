@@ -33,8 +33,8 @@ module "ec2" {
   security_groups = [module.security_group.id]
   user_data       = <<USER_DATA
 sudo yum install -y httpd
-sudo systemctl enable httpd
-sudo systemctl start httpd      
+sudo systemctl enable httpd.service
+sudo systemctl start httpd.service    
   USER_DATA
   key_name        = var.key_name
 }
