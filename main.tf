@@ -42,3 +42,15 @@ sudo systemctl start httpd
   USER_DATA
   key_name        = var.key_name
 }
+
+module "s3_bucket_public" {
+    source = "./S3"
+    bucket = "yanap-terraform-test-public"
+    acl = "public-read"
+}
+
+module "s3_bucket_private" {
+    source = "./S3"
+    bucket = "yanap-terraform-test-private"
+    acl = "private"
+}
