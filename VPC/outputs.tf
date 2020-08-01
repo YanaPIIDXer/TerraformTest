@@ -12,3 +12,8 @@ output "private_subnets" {
   value       = aws_subnet.private_subnets
   description = "パブリックサブネットの配列"
 }
+
+output "internet_gateway_id" {
+  value       = length(aws_internet_gateway.internet_gateway) > 0 ? aws_internet_gateway.internet_gateway[0].id : null
+  description = "インターネットゲートウェイのＩＤ"
+}
