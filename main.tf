@@ -33,6 +33,7 @@ module "ec2" {
   subnet          = module.vpc.public_subnets[0]
   security_groups = [module.security_group.id]
   user_data       = <<USER_DATA
+#/bin/bash
 yum install -y httpd
 systemctl enable httpd.service
 systemctl start httpd.service
