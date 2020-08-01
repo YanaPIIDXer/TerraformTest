@@ -32,14 +32,7 @@ module "ec2" {
   source          = "./EC2"
   subnet          = module.vpc.public_subnets[0]
   security_groups = [module.security_group.id]
-  user_data       = <<USER_DATA
-#! /bin/bash
-sudo yum update -y
-sudo yum install -y httpd
-sudo yum install -y mysql
-sudo systemctl enable httpd
-sudo systemctl start httpd
-  USER_DATA
+  user_data       = file("./setup_server.sh")
   key_name        = var.key_name
 }
 
