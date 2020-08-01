@@ -4,6 +4,16 @@ output "vpc_id" {
 }
 
 output "internet_gateway_id" {
-    value = aws_internet_gateway.internet_gateway.id
-    description = "インターネットゲートウェイのＩＤ"
+  value       = aws_internet_gateway.internet_gateway.id
+  description = "インターネットゲートウェイのＩＤ"
+}
+
+output "public_subnets" {
+  value       = aws_subnet.public_subnets
+  description = "パブリックサブネットの配列"
+}
+
+output "private_subnets" {
+  value       = aws_subnet.private_subnets
+  description = "パブリックサブネットの配列"
 }
