@@ -21,7 +21,7 @@ variable "storage" {
 }
 
 variable "instance_class" {
-  default     = "db.t3.micro"
+  default     = "db.t2.micro"
   description = "インスタンスクラス"
 }
 
